@@ -164,13 +164,54 @@ CREATE TABLE IF NOT EXISTS `pettface`.`comments` (
     
     
     
-    
-    
-    
-    
-    
-    
-    
+    -- Insertar datos en la tabla pet_owner
+INSERT INTO pet_owner (id, username)
+VALUES (1, 'john_doe'),
+       (2, 'jane_smith'),
+       (3, 'bob_jones');
+
+-- Insertar datos en la tabla pet_group
+INSERT INTO pet_group (id, numPets, name, description, type)
+VALUES (1, 2, 'Grupo 1', 'Grupo de perros', 'Perro'),
+       (2, 3, 'Grupo 2', 'Grupo de gatos', 'Gato');
+
+-- Insertar datos en la tabla couple
+INSERT INTO couple (id, type_of_couple, status)
+VALUES (1, 'Amigos', 'Activo'),
+       (2, 'Pareja', 'Inactivo');
+
+-- Insertar datos en la tabla eventos
+INSERT INTO eventos (id, title, category, IdCategory, body, fecha, horario, id_couple)
+VALUES (1, 'Evento de Perros', 'Concurso', 1, 'Concurso anual de perros', '2024-10-15', '2024-10-15 10:00:00', 1),
+       (2, 'Evento de Gatos', 'Exposición', 2, 'Exposición de gatos', '2024-11-10', '2024-11-10 12:00:00', 2);
+
+-- Insertar datos en la tabla pets
+INSERT INTO pets (id, name, age, raza, id_pet_owner, id_event, sexo)
+VALUES (1, 'Fido', 3, 'Golden Retriever', 1, 1, 'Macho'),
+       (2, 'Max', 2, 'Bulldog', 2, 1, 'Macho'),
+       (3, 'Whiskers', 4, 'Siamés', 3, 2, 'Hembra');
+
+-- Insertar datos en la tabla posts
+INSERT INTO posts (id, title, body, id_pet)
+VALUES (1, 'Fido gana concurso', 'Fido ganó el concurso anual de perros', 1),
+       (2, 'Max en el parque', 'Max disfrutó mucho en el parque hoy', 2);
+
+-- Insertar datos en la tabla comments
+INSERT INTO comments (id, body, id_Pet, id_post)
+VALUES (1, '¡Felicidades Fido!', 2, 1),
+       (2, 'Max se ve muy feliz', 3, 2);
+
+-- Insertar datos en la tabla friends
+INSERT INTO friends (id, id_pet)
+VALUES (1, 1),
+       (2, 2),
+       (3, 3);
+
+-- Insertar datos en la tabla best_friends_list
+INSERT INTO best_friends_list (id, id_friend, date_best_friends)
+VALUES (1, 1, '2024-09-01'),
+       (2, 2, '2024-09-02');
+
 
 SELECT * FROM pets WHERE id = 1;
 SELECT * FROM pet_owner;
